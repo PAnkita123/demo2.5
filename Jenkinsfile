@@ -16,7 +16,7 @@ pipeline{
     }
         stage('Test'){
             steps{
-                echo "This is Test release {$RELEASE} of log level {$LOG_LEVEL}"
+                echo "This is Test release {$RELEASE} "
                 writeFile file = 'test-result.txt', text = 'passed'
             }
         }
