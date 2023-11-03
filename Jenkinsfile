@@ -16,14 +16,14 @@ pipeline{
         stage('Test'){
             steps{
                 echo "This is Test release {$RELEASE} of log level {$LOG_LEVEL}"
-                writeFile file = 'testresult.txt', text = 'passed'
+                writeFile file = 'test-result.txt', text = 'passed'
             }
         }
     }
         
     post{
         success{
-            archiveArtifacts 'testresult.txt'
+            archiveArtifacts 'test-result.txt'
         }
     }
 
