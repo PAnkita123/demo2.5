@@ -4,7 +4,7 @@ pipeline{
         RELEASE = '20.4'
     }
     stages{
-        stage('build'){
+        stage('Build'){
             environment{
                 LOG_LEVEL = 'INFO'
             }
@@ -17,7 +17,7 @@ pipeline{
         stage('Test'){
             steps{
                 echo "This is Test release {$RELEASE} of log level {$LOG_LEVEL}"
-                writeFile file = 'testresult.txt', text = 'passed'
+                writeFile file = 'test-result.txt', text = 'passed'
             }
         }
     post{
